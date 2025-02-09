@@ -1,16 +1,16 @@
 const palindromes = function (palindromeString) {
-    palindromeString.toLowerCase();
-    palindromeString.filter(
-        (letter) => z
+
+    const alphanumerical = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    let cleanPalindromString = 
+    palindromeString.toLowerCase()
+    .split('')
+    .filter(
+        (letter) => alphanumerical.includes(letter)
     )
-    let reverseString = palindromeString.split('').reverse().join('').toLowerCase();;
-    for (let i = 0; i < reverseString.length; i++){
-        if (reverseString[i] !== palindromeString[i]){
-            return false;
-            break;
-        }
-    }
-    return true;
+    .join('');
+
+    let reverseCleanPalindromString =  cleanPalindromString.split('').reverse().join('');
+    return reverseCleanPalindromString === cleanPalindromString;
 };
 
 // Do not edit below this line
